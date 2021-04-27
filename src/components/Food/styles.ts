@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
+type PropTypeContainer = {
+  available: boolean;
+};
 
-export const Container = styled.div`
+export const Container = styled.div.attrs((props: PropTypeContainer) => ({
+  available: props.available,
+}))<PropTypeContainer>`
   background: #f0f0f5;
   border-radius: 8px;
 
